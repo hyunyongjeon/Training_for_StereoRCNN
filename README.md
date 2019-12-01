@@ -1,29 +1,32 @@
-# About our Stereo R-CNN algorithm 
+# Improved Stereo R-CNN
+
+**Authors:** Team32
+Ji-il Park, Hyunyong Jeon, Leon Thormeter
 
 ## 0. Install
 
-This implementation is tested under Pytorch 0.3.0. To avoid affecting your Pytorch version, we recommend using conda to enable multiple versions of Pytorch.
+This implementation is tested under Pytorch 1.0.0. To avoid affecting your Pytorch version, we recommend using conda to enable multiple versions of Pytorch.
 
 0.0. Install Pytorch:
 ```
-    conda create -n env_stereo python=2.7
+    conda create -n env_stereo python=3.6
     conda activate env_stereo
-    conda install pytorch=0.3.0 cuda80 -c pytorch
+    conda install pytorch=1.0.0 cuda90 -c pytorch
     conda install torchvision -c pytorch
 ```
 0.1. Other dependencies:
 ```
     git clone git@github.com:HKUST-Aerial-Robotics/Stereo-RCNN.git
     cd stereo_rcnn
+    git checkout 1.0
     pip install -r requirements.txt
 ```
 0.2. Build:
 ```
     cd lib
-    sh make.sh
+    python setup.py build develop
     cd ..
 ```
-
 
 ## 1. Quick Demo
 
@@ -31,7 +34,7 @@ This implementation is tested under Pytorch 0.3.0. To avoid affecting your Pytor
 ```
     mkdir models_stereo
 ```
-1.1. Download our trained weight [One Drive](https://hkustconnect-my.sharepoint.com/:u:/g/personal/pliap_connect_ust_hk/ESF-5mWMAK5PquLJQFs8evUB2xCbSwGuxbsUEeH9fcet6w?e=Vu0AzW)/[Google Drive](https://drive.google.com/file/d/1rZ5AsMms7-oO-VfoNTAmBFOr8O2L0-xt/view?usp=sharing) and put it into models_stereo/, then just run
+1.1. Download our trained weight and put it into models_stereo(we contain ours already)/ then just run
 
 ```
     python demo.py
@@ -57,39 +60,28 @@ yourfolder/object
     ln -s yourfolder/object object
     cd ../..
 ```
-## 3. Training
-
-Download the Res-101 pretrained weight [One Drive](https://hkustconnect-my.sharepoint.com/:u:/g/personal/pliap_connect_ust_hk/ESxYZL8TjzxAneYh_mWflFsBs0lZ-hc4m67W1k9_hYgXzQ?e=dZdoej)/[Google Drive](https://drive.google.com/file/d/1_t8TtUevtMdnvZ2SoD7Ut8sS1adyCKTt/view?usp=sharing), and put it into data/pretrained_model
-
-Set corresponding CUDA_VISIBLE_DEVICES in train.sh, and simply run
-```
-    ./train.sh
-```
-It consumes ~11G GPU memery for training. If your GPU memery is not enough, please try our light-weight version in branch mono.
-
-The trained model and training log are saved in /models_stereo by default.
-
-## 4. Evaluation
+## 3. Test(Original algorithm)
 
 You can evaluate the 3D detection performance using either our provided model or your trained model. 
 Set corresponding CUDA_VISIBLE_DEVICES in test.sh, and run
 ```
     ./test.sh
 ```
+## 4. Test(Ours)
+Change the dataset
 
-The results are saved in models_stereo/result/data by default. You can evaluate the results using the tool from [here](https://github.com/prclibo/kitti_eval).
+```
+yourfolder/object
+              training
+                image_2
+                image_3
+                label_2
+                calib
+                velodyne
+```
+You can evaluate the 3D detection performance using either our provided model or your trained model. 
+Set corresponding CUDA_VISIBLE_DEVICES in test.sh, and run
+```
+    ./test.sh
+```
 
-Some sample results:
-
-<img src="doc/results.png" width = 90% div align=center />
-
-## 5. Acknowledgments
-
-This repo is built based on the Faster RCNN implementation from [faster-rcnn.pytorch](https://github.com/jwyang/faster-rcnn.pytorch) and [fpn.pytorch](https://github.com/jwyang/fpn.pytorch), and we also use the imagenet pretrained weight (originally provided from [here](https://filebox.ece.vt.edu/~jw2yang/faster-rcnn/pretrained-base-models/resnet101_caffe.pth)) for initialization.
-
-## 6. License
-The source code is released under [MIT](https://opensource.org/licenses/MIT) license.
-
-We are still working on improving the code reliability. For any technical issues, please contact Peiliang Li <pliapATconnect.ust.hk>.
-
-For commercial inquiries, please contact Shaojie Shen <eeshaojieATust.hk>.
