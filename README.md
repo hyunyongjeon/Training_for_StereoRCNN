@@ -17,7 +17,7 @@ To avoid affecting your Pytorch version, we recommend using conda to enable mult
 ```
 0.1. Other dependencies:
 ```
-    git clone git@github.com:HKUST-Aerial-Robotics/Stereo-RCNN.git
+    git clone https://github.com/hyunyongjeon/repo.git
     cd stereo_rcnn
     git checkout 1.0
     pip install -r requirements.txt
@@ -31,11 +31,7 @@ To avoid affecting your Pytorch version, we recommend using conda to enable mult
 
 ## 1. Quick Demo
 
-1.0. Set the folder for placing the model
-```
-    mkdir models_stereo
-```
-1.1. Download our trained weight and put it into models_stereo(we contain ours already)/ then just run
+1.0. Just run
 
 ```
     python demo.py
@@ -69,6 +65,13 @@ Set corresponding CUDA_VISIBLE_DEVICES in test.sh, and run
     ./test.sh
 ```
 ## 4. Test(Ours)
+Chande the file(generate anchors.py)
+from [Stereo-RCNN-1.0]-[lib]-[model]-[rpn]-[generate_anchors.py]
+to 'generate_anchors.py' that is placed in our root folder
+Because we change RPNs.
+
+<img src="changed generate anchor part .jpg" width = 90% div align=center />
+
 Change the dataset
 
 <img src="20191201_184112.png" width = 90% div align=center />
@@ -82,7 +85,7 @@ yourfolder/object
                 calib
                 velodyne
 ```
-You can evaluate the 3D detection performance using either our provided model or your trained model. 
+You can test the 3D detection performance. 
 Set corresponding CUDA_VISIBLE_DEVICES in test.sh, and run
 ```
     ./test.sh
