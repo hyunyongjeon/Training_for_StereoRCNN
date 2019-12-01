@@ -1,27 +1,4 @@
-# repo
-# Stereo R-CNN
-## Stereo R-CNN based 3D Object Detection for Autonomous Driving
-
-<img src="doc/system.png" width = 90% div align=center />
-
-**26 May 2019**: Pytorch 1.0.0 and Python 3.6 are supported now. Please checkout to [branch 1.0](https://github.com/HKUST-Aerial-Robotics/Stereo-RCNN/tree/1.0)!
-
-This project contains the implementation of our CVPR 2019 paper [arxiv](https://arxiv.org/pdf/1902.09738.pdf).
-
-Stereo R-CNN focuses on accurate 3D object detection and estimation using image-only data in autonomous driving scenarios. It features simultaneous object detection and association for stereo images, 3D box estimation using 2D information, accurate dense alignment for 3D box refinement. We also provide a light-weight version based on the monocular 2D detection, which only uses stereo images in the dense alignment module. Please checkout to branch [mono](https://github.com/HKUST-Aerial-Robotics/Stereo-RCNN/tree/mono) for details.
-
-**Authors:** [Peiliang Li](https://peiliangli.github.io/), [Xiaozhi Chen](https://xiaozhichen.github.io/) and [Shaojie Shen](http://uav.ust.hk/group/) from the [HKUST Aerial Robotics Group](http://uav.ust.hk/), and [DJI](https://www.dji.com/).
-
-If you find the project useful for your research, please cite: 
-
-```
-@inproceedings{licvpr2019, 
-    title     = {Stereo R-CNN based 3D Object Detection for Autonomous Driving}, 
-    author    = {Li, Peiliang and Chen, Xiaozhi and Shen, Shaojie}, 
-    booktitle = {CVPR}, 
-    year      = {2019} 
-}
-```
+# About our Stereo R-CNN algorithm 
 
 ## 0. Install
 
