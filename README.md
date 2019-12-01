@@ -1,11 +1,12 @@
-# Improved Stereo R-CNN
+# Improved(Ours. Especially RPN changed) Stereo R-CNN
 
 **Authors:** Team32
-Ji-il Park, Hyunyong Jeon, Leon Thormeter
+Ji-il Park(20195355), Hyunyong Jeon(20193813), Leon Thormeyer(20196530)
 
 ## 0. Install
 
-This implementation is tested under Pytorch 1.0.0. To avoid affecting your Pytorch version, we recommend using conda to enable multiple versions of Pytorch.
+This implementation is tested under Pytorch 1.0.0. 
+To avoid affecting your Pytorch version, we recommend using conda to enable multiple versions of Pytorch.
 
 0.0. Install Pytorch:
 ```
