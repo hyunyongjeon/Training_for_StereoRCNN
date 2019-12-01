@@ -65,14 +65,15 @@ Set corresponding CUDA_VISIBLE_DEVICES in test.sh, and run
     ./test.sh
 ```
 ## 4. Test(Ours)
-Chande the file(generate anchors.py)
+
+4.1 Chande the file(generate anchors.py)
 from [Stereo-RCNN-1.0]-[lib]-[model]-[rpn]-[generate_anchors.py]
 to 'generate_anchors.py' that is placed in our root folder
 Because we change RPNs.
 
 <img src="changed generate anchor part .jpg" width = 90% div align=center />
 
-Change the dataset
+4.2 Change the dataset
 
 <img src="20191201_184112.png" width = 90% div align=center />
 
