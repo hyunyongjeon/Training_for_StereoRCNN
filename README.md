@@ -1,4 +1,4 @@
-# Improved(Ours. Especially RPN changed) Stereo R-CNN
+# Stereo R-CNN
 
 **Authors:** Team32
 Ji-il Park(20195355), Hyunyong Jeon(20193813), Leon Thormeyer(20196530)
