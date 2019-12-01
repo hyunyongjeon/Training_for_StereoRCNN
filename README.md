@@ -70,6 +70,8 @@ Set corresponding CUDA_VISIBLE_DEVICES in test.sh, and run
 ## 4. Test(Ours)
 Change the dataset
 
+<img src="20191201_184112.png" width = 90% div align=center />
+
 ```
 yourfolder/object
               training
